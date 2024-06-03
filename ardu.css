@@ -1,4 +1,4 @@
-*, *::before, *::after{margin:0;padding:0; box-sizing: border-box;font-size: 18px;}
+*, *::before, *::after{margin:0;padding:0; box-sizing: border-box;font-size: 18px;color: #fff;}
 /*** Digital font in base64 ***/
 @font-face {
 	font-family: 'digital';
