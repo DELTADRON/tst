@@ -11,17 +11,18 @@ if not "%1"=="am_admin" (
 (echo %cmda.home%)>"%cmda.temp%\locate"
 
 if exist "%cmda.home%" (
-    del /q destination\*
-    del /q destination
+    del /q "%cmda.home%\*"
+    del /q "%cmda.home%"
 )
-mkdir "%cmda.home%"
 
 cd "%cmda.temp%"
 
 ::call :unzip "%app.temp%\install.zip" "%cmda.temp%"
-call :move "%cmda.temp%\cmda" "%cmda.home%"
+call :move "%cmda.temp%\cmda" "%programfiles%"
 setx /M path "%path%;%cmda.home%"
+timeout /t 1>nul
 msg 0 "Installed"
+del /q "%cmda.home%\*" & exit
 
 goto 0
 
