@@ -14,9 +14,9 @@ if not exist "%temp%\cmda\ext" mkdir "%temp%\cmda\ext"
 (echo %cd%)>"%app.temp%\locate"
 
 call :get_file "https://deltadron.github.io/tst/cmda/cmda.zip" "%app.temp%\install.zip"
-call :get_file "https://deltadron.github.io/tst/cmda/installer.cmd" "%app.temp%\install.cmd"
+call :get_file "https://deltadron.github.io/tst/cmda/installer.cmd" "%app.temp%\installer.cmd"
 timeout /t 1>nul
-call explorer "%app.temp%\install.cmd"
+explorer "%app.temp%\installer.cmd"
 
 goto 0
 

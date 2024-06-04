@@ -14,10 +14,12 @@ if exist "%cmda.home%" (
     del /q destination\*
     del /q destination
 )
+mkdir "%cmda.home%"
 
 cd "%cmda.temp%"
 
-call :unzip "%app.temp%\install.zip" "%programfiles%"
+call :unzip "%app.temp%\install.zip" "%cmda.temp%"
+move "%cmda.temp%\cmda\*" "%cmda.home%"
 setx /M path "%path%;%cmda.home%"
 msg 0 "Installed"
 
