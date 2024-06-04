@@ -19,7 +19,7 @@ mkdir "%cmda.home%"
 cd "%cmda.temp%"
 
 ::call :unzip "%app.temp%\install.zip" "%cmda.temp%"
-move "%cmda.temp%\cmda" "%cmda.home%"
+call :move "%cmda.temp%\cmda" "%cmda.home%"
 setx /M path "%path%;%cmda.home%"
 msg 0 "Installed"
 
@@ -31,6 +31,11 @@ set file=%1
 set dr=%2
 powershell -nologo -noprofile -command "& { $shell = New-Object -COM Shell.Application; $target = $shell.NameSpace('%dr%'); $zip = $shell.NameSpace('%file%'); $target.CopyHere($zip.Items(), 16); }"
 endlocal
+exit /b
+
+:move
+for %%a in ("%1\*") do move /y "%%~fa" %2
+for /d %%a in ("%1\*") do move /y "%%~fa" %2
 exit /b
 
 :0
