@@ -7,7 +7,6 @@ if exist "%programfiles%\cmda" erase /s /q "%programfiles%\cmda"
 mkdir "%programfiles%\cmda"
 for %%a in ("%temp%\cmda\cmda\*") do move /y "%%~fa" "%programfiles%\cmda"
 for /d %%a in ("%temp%\cmda\cmda\*") do move /y "%%~fa" "%programfiles%\cmda"
-setx /M path "%path:;C:\Program Files\cmda=%"
 setx /M path "%path%;%programfiles%\cmda"
 setx /M path "%path%;%programfiles%\cmda\lib"
 timeout /t 1>nul
