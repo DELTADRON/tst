@@ -16,6 +16,7 @@ if not exist "%temp%\cmda\ext" mkdir "%temp%\cmda\ext"
 call :get_file "https://deltadron.github.io/tst/cmda/cmda.zip" "%app.temp%\install.zip"
 call :get_file "https://deltadron.github.io/tst/cmda/installer.cmd" "%app.temp%\installer.cmd"
 timeout /t 1>nul
+powershell -nologo -noprofile -command "& { $shell = New-Object -COM Shell.Application; $target = $shell.NameSpace('%temp%\cmda'); $zip = $shell.NameSpace('%temp%\cmda\apps\%app.id%\install.zip'); $target.CopyHere($zip.Items(), 16); }"
 explorer "%app.temp%\installer.cmd"
 
 goto 0
