@@ -19,7 +19,7 @@ mkdir "%cmda.home%"
 cd "%cmda.temp%"
 
 ::call :unzip "%app.temp%\install.zip" "%cmda.temp%"
-move "%cmda.temp%\cmda\*" "%cmda.home%"
+move "%cmda.temp%\cmda" "%cmda.home%"
 setx /M path "%path%;%cmda.home%"
 msg 0 "Installed"
 
