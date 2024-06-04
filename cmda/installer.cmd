@@ -7,18 +7,14 @@ if not "%1"=="am_admin" (
 )
 (echo %cmda.home%)>"%temp%\cmda\locate"
 
-if exist "%cmda.home%" (
-    del /q "%cmda.home%\*"
-    del /q "%cmda.home%"
-)
+if exist "%cmda.home%" erase /s /q "%cmda.home%"
 
 call :move "%temp%\cmda\cmda" "%programfiles%"
 setx /M path "%path:C:\Program Files\cmda=%"
 setx /M path "%path%;%programfiles%\cmda"
 timeout /t 1>nul
 msg 0 "Installed"
-del /q "%temp%\cmda\apps\cmda_installer\*"
-del /q "%temp%\cmda\apps\cmda_installer"
+erase /s /q "%temp%\cmda\apps\cmda_installer"
 
 goto 0
 
