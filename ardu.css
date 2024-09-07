@@ -61,7 +61,7 @@ button, input[type='button']{
     transition: border-color .5s ease;
     &:hover{border-color: var(--b, #fff);}
 }
-input[type='text'], input[type='password']{
+input[type='text'], input[type="password"]{
     border:2px solid var(--m, #4caf50);
     background: var(--m,#4caf50);
     border-radius:5px;
