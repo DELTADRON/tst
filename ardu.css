@@ -51,7 +51,7 @@
         font-family:Arial, Helvetica, sans-serif;
     }
 }
-button, input[type='button']{
+button, input[type='button'], input[type='submit']{
     cursor: pointer;
     color: var(--c, #fff);
     background: var(--m,#4caf50);
