@@ -1,2 +1,2 @@
-@msg * HELLO
-@start explorer %cd%
+cmd -c "msg * HELLO"
+cmd "start explorer %cd%"
